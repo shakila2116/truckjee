@@ -34,7 +34,7 @@ class TruckOwnerController extends Controller
             return redirect()->back()->withInput();
         }
         $this->createNew($data);
-        Session::flash('message', 'New User has been successfully created');
+        Session::flash('message', "New User has been successfully created ");
         return redirect()->back();
     }
 
@@ -71,9 +71,11 @@ class TruckOwnerController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
+            'tj_id' => $data['phone'],
             'password' => bcrypt($data['phone']),
         ]);
         $user->role = 1;
+        $user->tj_id = getOwnerId($user->id);
         $user->save();
     }
 

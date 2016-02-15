@@ -37,9 +37,23 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
+    /**
+     * @param $query
+     * @return mixed
+     */
     public function scopeOwners($query)
     {
         return $query->where('role','=',1);
     }
 
+
+    /**
+     * Used to get the trucks of a particular user
+     *
+     * @return mixed
+     */
+    public function trucks()
+    {
+        return $this->hasMany('TruckJee\Models\TruckOwner\Truck','owner_id')->get();
+    }
 }

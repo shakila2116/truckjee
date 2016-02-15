@@ -10,7 +10,7 @@ use TruckJee\Models\TruckOwner\TruckModel;
  */
 function getOwnerId($id)
 {
-    return "T".(100+$id);
+    return "TOW".(100+$id);
 }
 
 /**
@@ -45,7 +45,7 @@ function getModelInfo($modelId)
 
 function getTruckId($truckId)
 {
-    return "V".(100+ Truck::findOrFail($truckId)->id);
+    return "TR".(100+ Truck::findOrFail($truckId)->id);
 }
 
 function getStatus($status)

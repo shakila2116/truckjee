@@ -30,7 +30,7 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="truck_number">Truck Number</label>
-                                    <input value="{{ old('truck_number') }}" type="text" name="truck_number" class="form-control" id="truck_number" placeholder="Truck Number">
+                                    <input value="{{ old('truck_number') }}" type="text" name="truck_number" class="form-control" id="truck_number" style="text-transform: uppercase" placeholder="Truck Number">
                                 </div>
                                 <div class="form-group">
                                     <label for="short_form">Short Form</label>
@@ -162,10 +162,13 @@
 @section('scripts')
 
     <script src="{{ url('js/selectize.min.js') }}"></script>
-
+    <script src="{{ url('js/jquery.mask.min.js') }}"></script>=
 
     <script>
+
+
         $(document).ready(function(){
+            $('#truck_number').mask('AA-AA-AA-AAAA');
             $('#model_id').selectize({
                 valueField: 'id',
                 labelField: 'model_name',

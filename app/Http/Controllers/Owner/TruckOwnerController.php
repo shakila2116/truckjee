@@ -26,9 +26,8 @@ class TruckOwnerController extends Controller
      */
     public function index()
     {
-        $trucks = Truck::getTrucksOfUser($this->user->id);
         return view('truck-owner.dashboard')->with([
-            'trucks'    =>  $trucks
+            'trucks'    =>  $this->user->trucks()
         ]);
     }
 

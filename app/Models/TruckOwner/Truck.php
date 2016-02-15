@@ -28,5 +28,8 @@ class Truck extends Model
         return $query->where('owner_id','=',$id)->get();
     }
 
-
+    public function owner()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

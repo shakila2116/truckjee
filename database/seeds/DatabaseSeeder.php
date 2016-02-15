@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         DB::table('trucks')->truncate();
         DB::table('truck_model')->truncate();
         $this->call(UserTableSeeder::class);
-        $this->call(TruckAndModelTableSeeder::class);
+//        $this->call(TruckAndModelTableSeeder::class);
 
         Model::reguard();
     }

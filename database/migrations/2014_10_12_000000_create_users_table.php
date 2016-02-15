@@ -24,6 +24,31 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
+        Schema::create('user_details', function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->string('document_number');
+            $table->date('dob');
+            $table->string('gender');
+            $table->date('anniversary');
+            $table->string('address');
+            $table->string('id_proof');
+            $table->string('association_name');
+            $table->string('association_id');
+            $table->string('company_name');
+            $table->string('company_type');
+            $table->string('company_proof');
+            $table->integer('trucks_owned');
+            $table->string('no_employees');
+            $table->string('company_address');
+            $table->string('company_landline');
+            $table->string('company_mobile');
+            $table->string('company_website');
+        });
+
+        Schema::table('user_details',function($table){
+            $table->foreign('user_id')->references('id')->on('users');
+        });
     }
 
     /**
@@ -33,6 +58,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::drop('user_details');
         Schema::drop('users');
+
     }
 }

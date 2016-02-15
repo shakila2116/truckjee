@@ -37,8 +37,8 @@
                                     <td>{{ $truck->truck_number }}</td>
                                     <td>{{ getStatus($truck->status) }}</td>
                                     <td>
-                                        <a href="{{ url('truck-owner/trucks/'.$truck->id.'/view') }}" class="btn btn-xs btn-success">Track</a>
-                                        <a class="btn btn-xs btn-primary">View</a>
+                                        <a href="{{ url('truck-owner/trucks/'.$truck->id.'/view') }}" class="btn btn-xs btn-success">View</a>
+                                        <a class="btn btn-xs btn-primary">Track</a>
                                     </td>
                                 </tr>
                             @endforeach
