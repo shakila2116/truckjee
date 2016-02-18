@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use TruckJee\Http\Requests;
 use TruckJee\Http\Controllers\Controller;
 use TruckJee\Models\TruckOwner\Truck;
+use TruckJee\Models\TruckOwner\UserDetails;
 use TruckJee\User;
 
 class TruckOwnerController extends Controller
@@ -74,6 +75,11 @@ class TruckOwnerController extends Controller
     public function transactionHistory()
     {
         return view('truck-owner.transactions.transaction-history');
+    }
+    public function profile($id){
+        $owner = User :: findOrFail($id);
+        $user = UserDetails::where('user_id','=',$owner->id)->get();
+        return view('truck-owner.profile')->with(['owner'=>$owner,'user'=>$user]);
     }
 }
 

@@ -25,5 +25,9 @@ class UserDetails extends Model
         'company_website',
         'trucks_owned'
     ];
+    public function owner()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 }
