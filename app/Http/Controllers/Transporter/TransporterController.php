@@ -25,4 +25,8 @@ class TransporterController extends Controller
     {
         dd($request->input());
     }
+    public function viewRequirement(){
+        return view('transporter.requirement.view');
+    }
+
 }

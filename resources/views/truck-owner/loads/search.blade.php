@@ -9,7 +9,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Loads</a></li>
+            {{--<li><a href="#">Loads</a></li>--}}
             <li class="active">Search</li>
         </ol>
     </section>
