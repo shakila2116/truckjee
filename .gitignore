@@ -5,4 +5,8 @@ Homestead.json
 .env
 /.idea
 /public/users
+<<<<<<< HEAD
 /public/trucks
+=======
+/public/images
+>>>>>>> front-end

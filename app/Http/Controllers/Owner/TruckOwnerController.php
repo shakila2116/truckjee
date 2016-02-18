@@ -53,7 +53,7 @@ class TruckOwnerController extends Controller
 
     public function viewLiveBids()
     {
-        return view('truck-owner.loads.list');
+        return view('truck-owner.loads.live');
     }
 
     public function searchLoads()

@@ -52,6 +52,7 @@ Route::group([
     Route::get('/truck-owner/list','Admin\TruckOwnerController@showList');
     Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');
 
+
     /*
      * Routes for Trucks CRUD
      */
@@ -108,6 +109,7 @@ Route::group([
 
     Route::get('/requirement/create','Transporter\TransporterController@create');
     Route::post('/requirement/create','Transporter\TransporterController@createRequirement');
+    Route::get('/requirement/list','Transporter\TransporterController@viewRequirement');
 
 });
 
