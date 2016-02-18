@@ -22,13 +22,13 @@
             <div class="box-header with-border">
                 <table id="view-owners" class="table table-bordered table-striped" cellspacing="0" width="100%">
                     <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Actions</th>
-                        </tr>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
                     </thead>
                 </table>
             </div>
@@ -48,7 +48,7 @@
             var t = $('#view-owners').DataTable( {
                 "processing": true,
                 "serverSide": true,
-                "ajax":"{{ url('admin/truck-owner/get-owners') }}",
+                "ajax":"{{ url('admin/transporters/get-transporters') }}",
 
                 columns: [
                     { data: 'tj_id', name: 'tj_id' },

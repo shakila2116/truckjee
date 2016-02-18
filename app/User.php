@@ -46,6 +46,15 @@ class User extends Model implements AuthenticatableContract,
         return $query->where('role','=',1);
     }
 
+    public function scopeTransporters($query)
+    {
+        return $query->where('role','=',2);
+    }
+
+    public function getDetails()
+    {
+        return $this->hasOne('TruckJee\Models\UserDetails','user_id');
+    }
 
     /**
      * Used to get the trucks of a particular user

@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use TruckJee\Models\TruckOwner\Truck;
 use TruckJee\Models\TruckOwner\TruckModel;
+use TruckJee\Models\TruckOwner\TruckModelDetails;
 
 /**
  * @param $id
@@ -39,7 +40,7 @@ function dayFormat($dateTime)
  */
 function getModelInfo($modelId)
 {
-    $model = TruckModel::findOrFail($modelId);
+    $model = TruckModelDetails::findOrFail($modelId);
     return $model->manufacturer." - ".$model->model_name." - ".$model->max_capacity;
 }
 
@@ -53,4 +54,9 @@ function getStatus($status)
     if($status == 0)
         return "Empty";
     return "In Transaction";
+}
+
+function getSearchTerm($id)
+{
+    return TruckModel::findOrFail($id)->search_term;
 }

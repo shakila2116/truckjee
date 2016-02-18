@@ -84,7 +84,8 @@ class TruckController extends Controller
             'short_form'    =>  'required',
             'owner_id'      =>  'required',
             'imei'          =>  'required|unique:trucks,imei',
-            'model_id'      =>  'required'
+            'model_id'      =>  'required',
+            'search_term_id'      =>  'required'
         ]);
     }
 
@@ -100,6 +101,7 @@ class TruckController extends Controller
             'truck_number'  =>  $data['truck_number'],
             'short_form'    =>  $data['short_form'],
             'model_id'      =>  $data['model_id'],
+            'search_term_id'      =>  $data['search_term_id'],
             'owner_id'      =>  $data['owner_id'],
             'imei'          =>  $data['imei']
         ]);
@@ -113,6 +115,7 @@ class TruckController extends Controller
     public function view($id)
     {
         $truck = Truck::find($id);
+
         $owner = User::find($truck->owner_id);
         return view('admin.truck.view')->with([
             'owner' =>  $owner,

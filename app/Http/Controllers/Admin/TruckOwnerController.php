@@ -107,7 +107,7 @@ class TruckOwnerController extends Controller
 
     public function addFileToUser($doc, UploadedFile $file, $userId)
     {
-        $baseDir = 'users/'.$userId ;
+        $baseDir = 'users/'.getOwnerId($userId) ;
         $extn = $file->getClientOriginalExtension();
         $filename = $doc.'.'.$extn;
         $file->move($baseDir, $filename);

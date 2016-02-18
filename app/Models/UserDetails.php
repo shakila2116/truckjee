@@ -1,6 +1,6 @@
 <?php
 
-namespace TruckJee\Models\TruckOwner;
+namespace TruckJee\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

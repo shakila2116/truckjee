@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use TruckJee\Http\Requests;
 use TruckJee\Http\Controllers\Controller;
-use TruckJee\Models\TruckOwner\Truck;
 use TruckJee\Models\TruckOwner\TruckModel;
+use TruckJee\Models\TruckOwner\TruckModelDetails;
 use TruckJee\User;
 use Yajra\Datatables\Datatables;
 
@@ -31,6 +31,20 @@ class APIController extends Controller
             ->make(true);
     }
 
+    public function getTransporters()
+    {
+        $users = User::Transporters()->get();
+        return Datatables::of($users)
+            ->addColumn('actions', function ($data) {
+                return  "<a class='btn btn-xs btn-success' href='/admin/transporter/$data->id/view/'>View</a>";
+            })
+            ->removeColumn('role')
+            ->removeColumn('id')
+            ->removeColumn('created_at')
+            ->removeColumn('updated_at')
+            ->make(true);
+    }
+
     public function getTrucks()
     {
         $res = DB::table('users')
@@ -40,6 +54,8 @@ class APIController extends Controller
             ->addColumn('actions', function ($data) {
                 return  "<a class='btn btn-xs btn-success' href='/admin/truck/$data->id/view/'>View</a>";
             })
+            ->editColumn('search_term_id','{{ getSearchTerm($id) }}')
+            ->editColumn('model_id','{{ getModelInfo($id) }}')
             ->removeColumn('id')
             ->make(true);
     }
@@ -49,9 +65,16 @@ class APIController extends Controller
         $query = Input::get('q');
 
         return Response::json(array(
-            'data'=>TruckModel::where('model_name','like',"%". $query ."%")
-                ->orWhere('manufacturer','like',"%". $query ."%")
-                ->orWhere('search_term','like',"%". $query ."%")
+            'data'=>TruckModel::where('search_term','like',"%". $query ."%")
+                ->get()
+        ));
+    }
+    
+    public function getTruckModelDetails()
+    {
+        $query = Input::get('q');
+        return Response::json(array(
+            'data'=>TruckModelDetails::where('search_term_id','=',$query)
                 ->get()
         ));
     }

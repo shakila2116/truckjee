@@ -64,12 +64,25 @@ Route::group([
     Route::POST('/truck/add-files/{owner_id}','Admin\TruckController@addFilesToOwner');
     Route::get('/truck/list','Admin\TruckController@listTrucks');
 
+
+    /*
+     * Routes for Transporters
+     */
+    Route::get('transporter/create','Admin\TransporterController@showCreateTransporter');
+    Route::post('transporter/create','Admin\TransporterController@createTransporter');
+    Route::get('transporter/{id}/add-personal','Admin\TransporterController@showAddPersonal');
+    Route::post('transporter/add-personal','Admin\TransporterController@addPersonal');
+    Route::get('transporter/{id}/view','Admin\TransporterController@showTransporter');
+    Route::get('transporter/list','Admin\TransporterController@showList');
+
     /*
      * API End points
      */
     Route::get('/truck-owner/get-owners','Admin\APIController@getOwners');
     Route::get('/trucks/get-trucks','Admin\APIController@getTrucks');
     Route::get('/trucks/get-models','Admin\APIController@getTruckModels');
+    Route::get('/trucks/get-model-details','Admin\APIController@getTruckModelDetails');
+    Route::get('/transporters/get-transporters','Admin\APIController@getTransporters');
 
 });
 
