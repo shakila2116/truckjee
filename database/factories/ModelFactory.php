@@ -35,27 +35,8 @@ $factory->defineAs(TruckJee\User::class, 'owner' ,function (Faker\Generator $fak
 });
 
 $factory->defineAs(TruckJee\Models\TruckOwner\TruckModel::class,'truck_model', function(){
-    return [
-        'manufacturer'  =>  'Mahendra',
-        'search_term'   =>  '19Ft-FTL',
-        'model_name'    =>  'MXL25',
-        'dimension'     =>  'LxBxH',
-        'max_capacity'  =>  '25MT',
-        'wheels'        =>  '12',
-        'type'          =>  'Container',
-        'axle'          =>  '2'
-    ];
+
 });
 
-$factory->defineAs(TruckJee\Models\TruckOwner\TruckModel::class,'truck_model1', function(){
-    return [
-        'manufacturer'  =>  'Ashok Leyland',
-        'search_term'   =>  '21Ft-FTL',
-        'model_name'    =>  'MXL21',
-        'dimension'     =>  'LxBxH',
-        'max_capacity'  =>  '21MT',
-        'wheels'        =>  '10',
-        'type'          =>  'Open',
-        'axle'          =>  '2'
-    ];
-});
+
+

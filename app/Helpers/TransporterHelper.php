@@ -1,5 +1,10 @@
 <?php
 
+function getTransporterId($id)
+{
+    return "TR".(100+$id);
+}
+
 function getPackingType()
 {
     return [

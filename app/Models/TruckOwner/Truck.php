@@ -14,6 +14,7 @@ class Truck extends Model
         'truck_number',
         'short_form',
         'model_id',
+        'search_term_id',
         'owner_id',
         'imei',
         'rc',

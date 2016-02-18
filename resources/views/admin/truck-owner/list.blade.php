@@ -31,18 +31,6 @@
                         </tr>
                     </thead>
                 </table>
-                
-                <table id="trucks" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>truck id</th>
-                            <th>owner name</th>
-                            <th>short form</th>
-                            <th>truck number</th>
-                        </tr>
-                    </thead>
-                </table>
-                
             </div>
         </div>
     </section>

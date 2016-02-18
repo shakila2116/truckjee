@@ -40,6 +40,7 @@ class CreateTrucksMigration extends Migration
             $table->string('truck_number')->unique();
             $table->integer('owner_id')->unsigned();
             $table->integer('model_id')->unsigned();
+            $table->integer('search_term_id')->unsigned();
             $table->string('status'); //0-empty 1-transaction
             $table->string('short_form');
             $table->string('imei',16);
@@ -56,7 +57,8 @@ class CreateTrucksMigration extends Migration
 
 
         Schema::table('trucks',function($table){
-            $table->foreign('model_id')->references('id')->on('truck_models');
+            $table->foreign('model_id')->references('id')->on('truck_model_details');
+            $table->foreign('search_term_id')->references('id')->on('truck_models');
             $table->foreign('owner_id')->references('id')->on('users');
         });
 

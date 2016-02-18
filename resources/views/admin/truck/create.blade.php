@@ -42,7 +42,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="model_id">Truck Model</label>
+                                    <label for="search_term_id">Truck Model(Search Term)</label>
+                                    <select name="search_term_id" id="search_term_id" placeholder="Enter Model Name"></select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="model_id">Truck Model, Make and other details</label>
                                     <select name="model_id" id="model_id" placeholder="Enter Model Name"></select>
                                 </div>
 
@@ -169,20 +174,18 @@
 
         $(document).ready(function(){
             $('#truck_number').mask('AA-AA-AA-AAAA');
-            $('#model_id').selectize({
+            $('#search_term_id').selectize({
                 valueField: 'id',
-                labelField: 'model_name',
-                searchField: ['model_name','manufacturer','search_term'],
+                labelField: 'search_term',
+                searchField: ['search_term'],
                 maxOptions: 10,
                 options: [],
                 create: false,
                 render: {
                     option: function(item, escape) {
                         return '<div>' +
-                                escape(item.search_term)+'<br>' +
-                                escape(item.manufacturer) + '-' + escape(item.model_name) + '<br>'+
-                                escape(item.max_capacity) + '- ' + escape(item.axle) +' - '+ escape(item.type) + '- Wheels : ' + escape(item.wheels) +
-                                '</div>'
+                                escape(item.search_term)+
+                                '</div>';
                     }
                 },
                 load: function(query, callback) {
@@ -193,6 +196,45 @@
                         dataType: 'json',
                         data: {
                             q: query
+                        },
+                        error: function() {
+                            callback();
+                        },
+                        success: function(res) {
+                            callback(res.data);
+                        }
+                    });
+                }
+            });
+
+            $('#model_id').selectize({
+                valueField: 'id',
+                searchField: ['model_name', 'manufacturer','max_capacity','type'],
+                maxOptions: 10,
+                options: [],
+                create: false,
+                render: {
+                    option: function(item, escape) {
+                        return  '<div>' +
+                                escape(item.manufacturer) + '-' + escape(item.model_name) + '<br>'+
+                                escape(item.max_capacity) + '- ' + escape(item.axle) +' - '+ escape(item.type) + '- Wheels : ' + escape(item.wheels) +
+                                '</div>'
+                    },
+                    item: function(item, escape){
+                        return '<div>'
+                                + escape(item.manufacturer) + ' - '
+                                + escape(item.model_name)
+                                + '</div>';
+                    }
+                },
+                load: function(query, callback) {
+                    if (!query.length) return callback();
+                    $.ajax({
+                        url: "{{ url('admin/trucks/get-model-details') }}",
+                        type: 'GET',
+                        dataType: 'json',
+                        data: {
+                            q: $('#search_term_id').val()
                         },
                         error: function() {
                             callback();

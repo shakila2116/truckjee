@@ -50,24 +50,29 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Trucks Info</h3>
                     </div>
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <td>Number</td>
-                            <td>Short Form</td>
-                            <td>IMEI</td>
-                            <td>Model Id</td>
-                        </tr>
-                        </thead>
-                        @foreach($trucks as $truck)
+                    <div class="box-body">
+                        <table class="table table-bordered">
+                            <thead>
                             <tr>
-                                <td>{{ $truck->truck_number}}</td>
-                                <td>{{ $truck->short_form }}</td>
-                                <td>{{ $truck->imei }}</td>
-                                <td>{{ $truck->model_id }}</td>
+                                <td>Number</td>
+                                <td>Search Term</td>
+                                <td>IMEI</td>
+                                <td>Model Name</td>
+                                <td></td>
                             </tr>
-                        @endforeach
-                    </table>
+                            </thead>
+                            @foreach($trucks as $truck)
+                                <tr>
+                                    <td>{{ $truck->truck_number}}</td>
+                                    <td>{{ getSearchTerm($truck->search_term_id) }}</td>
+                                    <td>{{ $truck->imei }}</td>
+                                    <td>{{ getModelInfo($truck->model_id) }}</td>
+                                    <td><a href="{{ url('/admin/truck/'.$truck->id.'/view') }}"
+                                           class="btn btn-xs btn-danger">View</a></td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
