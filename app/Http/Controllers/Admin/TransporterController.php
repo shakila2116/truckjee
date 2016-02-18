@@ -100,9 +100,16 @@ class TransporterController extends Controller
     
     public function showTransporter($id)
     {
-        $owner = User::findOrFail($id);
+        $transporter = User::findOrFail($id);
+        $detail = $transporter->getDetails()->first();
         return view('admin.transporter.view')->with([
-            'owner'     =>  $owner
+            'transporter'     =>  $transporter,
+            'detail'          =>  $detail
         ]);
+    }
+
+    public function showList()
+    {
+        return view('admin.transporter.list');
     }
 }

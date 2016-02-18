@@ -73,7 +73,7 @@ Route::group([
     Route::get('transporter/{id}/add-personal','Admin\TransporterController@showAddPersonal');
     Route::post('transporter/add-personal','Admin\TransporterController@addPersonal');
     Route::get('transporter/{id}/view','Admin\TransporterController@showTransporter');
-    Route::get('transporter/list','Admin\TransporterController@listTransporter');
+    Route::get('transporter/list','Admin\TransporterController@showList');
 
     /*
      * API End points
@@ -82,6 +82,7 @@ Route::group([
     Route::get('/trucks/get-trucks','Admin\APIController@getTrucks');
     Route::get('/trucks/get-models','Admin\APIController@getTruckModels');
     Route::get('/trucks/get-model-details','Admin\APIController@getTruckModelDetails');
+    Route::get('/transporters/get-transporters','Admin\APIController@getTransporters');
 
 });
 

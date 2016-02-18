@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use TruckJee\Http\Requests;
 use TruckJee\Http\Controllers\Controller;
-use TruckJee\Models\TruckOwner\Truck;
 use TruckJee\Models\TruckOwner\TruckModel;
 use TruckJee\Models\TruckOwner\TruckModelDetails;
 use TruckJee\User;
@@ -24,6 +23,20 @@ class APIController extends Controller
             ->addColumn('actions', function ($data) {
                 return  "<a class='btn btn-xs btn-success' href='/admin/truck-owner/$data->id/view/'>View</a>"." ".
                 "<a class='btn btn-xs btn-danger' href='/admin/truck/$data->id/create'>Add Truck</a>";
+            })
+            ->removeColumn('role')
+            ->removeColumn('id')
+            ->removeColumn('created_at')
+            ->removeColumn('updated_at')
+            ->make(true);
+    }
+
+    public function getTransporters()
+    {
+        $users = User::Transporters()->get();
+        return Datatables::of($users)
+            ->addColumn('actions', function ($data) {
+                return  "<a class='btn btn-xs btn-success' href='/admin/transporter/$data->id/view/'>View</a>";
             })
             ->removeColumn('role')
             ->removeColumn('id')
