@@ -7,7 +7,7 @@
             Your Trucks
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="/truck-owner"><i class="fa fa-dashboard"></i> Home</a></li>
             {{--<li><a href="#">Truck Information</a></li>--}}
             <li class="active">Your truks</li>
         </ol>

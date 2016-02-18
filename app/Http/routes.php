@@ -109,6 +109,7 @@ Route::group([
     Route::get('/view-participation','Owner\TruckOwnerController@viewParticipation');
     Route::get('/current-transactions','Owner\TruckOwnerController@currentTransactions');
     Route::get('/transaction-history','Owner\TruckOwnerController@transactionHistory');
+    Route::get('/profile/{id}','owner\TruckOwnerController@profile');
 });
 
 

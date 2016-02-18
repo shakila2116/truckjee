@@ -7,7 +7,7 @@
             Transaction History
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="/truck-owner"><i class="fa fa-dashboard"></i> Home</a></li>
             {{--<li><a href="#">Transctions</a></li>--}}
             <li class="active">Transaction-history</li>
         </ol>
