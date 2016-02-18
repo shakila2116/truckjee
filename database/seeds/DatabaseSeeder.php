@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS = 0'); // disable foreign key constraints
         DB::table('users')->truncate();
         DB::table('trucks')->truncate();
-        DB::table('truck_model')->truncate();
+        DB::table('truck_model_details')->truncate();
         $this->call(UserTableSeeder::class);
 //        $this->call(TruckAndModelTableSeeder::class);
 

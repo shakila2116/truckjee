@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
 
         Schema::create('user_details', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->unique();
             $table->string('document_number');
             $table->date('dob');
             $table->string('gender');
@@ -44,6 +44,7 @@ class CreateUsersTable extends Migration
             $table->string('company_landline');
             $table->string('company_mobile');
             $table->string('company_website');
+            $table->timestamps();
         });
 
         Schema::table('user_details',function($table){
@@ -58,8 +59,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_details');
-        Schema::drop('users');
+        Schema::dropIfExists('user_details');
+        Schema::dropIfExists('users');
 
     }
 }

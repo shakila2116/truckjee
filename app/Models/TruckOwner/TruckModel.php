@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TruckModel extends Model
 {
-    protected $table = 'truck_model';
+    protected $table = 'truck_model_details';
 
     protected $fillable =[
         'manufacturer',

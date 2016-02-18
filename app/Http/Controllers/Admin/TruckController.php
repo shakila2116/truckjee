@@ -17,13 +17,13 @@ class TruckController extends Controller
     {
         $this->middleware('auth');
     }
-
     /**
      * @param $owner_id
      * @return $this
      */
     public function showCreateTruck($owner_id)
     {
+
         $owner = User::findOrFail($owner_id);
         $trucks = Truck::where('owner_id','=',$owner_id)->get();
 

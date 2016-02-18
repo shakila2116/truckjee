@@ -12,10 +12,17 @@ class CreateTrucksMigration extends Migration
      */
     public function up()
     {
-        Schema::create('truck_model',function(Blueprint $table){
+        Schema::create('truck_models',function(Blueprint $table){
             $table->increments('id');
-            $table->string('search_term')->unique();
-            $table->string('model_name')->unique();
+            $table->string('search_term');
+            $table->timestamps();
+
+        });
+
+        Schema::create('truck_model_details',function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('search_term_id')->unsigned();
+            $table->string('model_name');
             $table->string('manufacturer');
             $table->string('dimension');
             $table->string('max_capacity',10);
@@ -33,7 +40,7 @@ class CreateTrucksMigration extends Migration
             $table->string('truck_number')->unique();
             $table->integer('owner_id')->unsigned();
             $table->integer('model_id')->unsigned();
-            $table->integer('status');
+            $table->string('status'); //0-empty 1-transaction
             $table->string('short_form');
             $table->string('imei',16);
             $table->string('current_location_city');
@@ -49,8 +56,12 @@ class CreateTrucksMigration extends Migration
 
 
         Schema::table('trucks',function($table){
-            $table->foreign('model_id')->references('id')->on('truck_model');
+            $table->foreign('model_id')->references('id')->on('truck_models');
             $table->foreign('owner_id')->references('id')->on('users');
+        });
+
+        Schema::table('truck_model_details', function($table){
+            $table->foreign('search_term_id')->references('id')->on('truck_models');
         });
     }
 
@@ -61,7 +72,10 @@ class CreateTrucksMigration extends Migration
      */
     public function down()
     {
-        Schema::drop('trucks');
-        Schema::drop('truck_model');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        Schema::dropIfExists('truck_model_details');
+        Schema::dropIfExists('truck_models');
+        Schema::dropIfExists('trucks');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

@@ -5,11 +5,13 @@ namespace TruckJee\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use TruckJee\Http\Requests;
 use TruckJee\Http\Controllers\Controller;
 use TruckJee\Models\TruckOwner\Truck;
+use TruckJee\Models\TruckOwner\UserDetails;
 use TruckJee\User;
-use Yajra\Datatables\Datatables;
+
 
 class TruckOwnerController extends Controller
 {
@@ -33,9 +35,9 @@ class TruckOwnerController extends Controller
             Session::flash('errors', $errors);
             return redirect()->back()->withInput();
         }
-        $this->createNew($data);
+        $userId = $this->createNew($data);
         Session::flash('message', "New User has been successfully created ");
-        return redirect()->back();
+        return redirect('admin/truck-owner/'.$userId.'/add-personal');
     }
 
 
@@ -77,6 +79,40 @@ class TruckOwnerController extends Controller
         $user->role = 1;
         $user->tj_id = getOwnerId($user->id);
         $user->save();
+        return $user->id;
     }
+
+    public function showAddPersonal($id)
+    {
+        return view('admin.truck-owner.add-personal')->with([
+            'owner' =>  User::findOrFail($id)
+        ]);
+    }
+
+    public function addPersonal(Request $request)
+    {
+        $docs = ['id_proof','company_proof'];
+        $input = $request->input();
+        $userDetails = new UserDetails($input);
+        foreach($docs as $doc)
+        {
+            if($request->hasFile($doc))
+            {
+                $userDetails->$doc = $this->addFileToUser($doc ,$request->file($doc), $userDetails->user_id);
+            }
+        }
+        $userDetails->save();
+        return redirect('admin/truck-owner/'.$input['user_id'].'/view');
+    }
+
+    public function addFileToUser($doc, UploadedFile $file, $userId)
+    {
+        $baseDir = 'users/'.$userId ;
+        $extn = $file->getClientOriginalExtension();
+        $filename = $doc.'.'.$extn;
+        $file->move($baseDir, $filename);
+        return ($baseDir.'/'.$filename);
+    }
+
 
 }

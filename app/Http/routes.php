@@ -47,6 +47,8 @@ Route::group([
      */
     Route::get('/truck-owner/create','Admin\TruckOwnerController@showCreate');
     Route::post('/truck-owner/create','Admin\TruckOwnerController@create');
+    Route::get('/truck-owner/{id}/add-personal','Admin\TruckOwnerController@showAddPersonal');
+    Route::post('/truck-owner/add-personal','Admin\TruckOwnerController@addPersonal');
     Route::get('/truck-owner/list','Admin\TruckOwnerController@showList');
     Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');
 
