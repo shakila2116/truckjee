@@ -2,6 +2,7 @@
 
 namespace TruckJee\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -9,7 +10,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use TruckJee\Http\Requests;
 use TruckJee\Http\Controllers\Controller;
 use TruckJee\Models\TruckOwner\Truck;
-use TruckJee\Models\TruckOwner\UserDetails;
+use TruckJee\Models\UserDetails;
 use TruckJee\User;
 
 
@@ -94,6 +95,8 @@ class TruckOwnerController extends Controller
         $docs = ['id_proof','company_proof'];
         $input = $request->input();
         $userDetails = new UserDetails($input);
+        $userDetails['dob'] = $this->formatDate($userDetails['dob']);
+        $userDetails['anniversary'] = $this->formatDate($userDetails['anniversary']);
         foreach($docs as $doc)
         {
             if($request->hasFile($doc))
@@ -102,6 +105,7 @@ class TruckOwnerController extends Controller
             }
         }
         $userDetails->save();
+
         return redirect('admin/truck-owner/'.$input['user_id'].'/view');
     }
 
@@ -114,5 +118,9 @@ class TruckOwnerController extends Controller
         return ($baseDir.'/'.$filename);
     }
 
+    public function formatDate($date)
+    {
+        return Carbon::parse($date);
+    }
 
 }
