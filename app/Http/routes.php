@@ -51,6 +51,10 @@ Route::group([
     Route::post('/truck-owner/add-personal','Admin\TruckOwnerController@addPersonal');
     Route::get('/truck-owner/list','Admin\TruckOwnerController@showList');
     Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');
+//    Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');
+//    Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');//    Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');
+//    Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');//    Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');
+//    Route::get('/truck-owner/{id}/view','Admin\TruckOwnerController@showOwner');
 
     /*
      * Routes for Trucks CRUD
