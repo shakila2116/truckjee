@@ -43,10 +43,12 @@
                             <td>Address:</td>
                             <td>{{ $use->address }}</td>
                         </tr>
-                        {{--<tr>--}}
-                            {{--<td>Proof:</td>--}}
-                            {{--<td>{{ $use->id_proof }}</td>--}}
-                        {{--</tr>--}}
+                        <tr>
+                            <td>Proof:</td>
+                            <td>
+                                <a href="{{ url( $use->id_proof) }}" data-title="RC Book Copy" data-lightbox="truck">Id Proof</a>
+                               </td>
+                        </tr>
                     </table>
                 @endforeach
 
@@ -77,10 +79,10 @@
                                     <td>Company Type:</td>
                                     <td>{{ $use->company_type }}</td>
                                 </tr>
-                                {{--<tr>--}}
-                                    {{--<td>Company Proof:</td>--}}
-                                    {{--<td>{{ $use->company_proof }}</td>--}}
-                                {{--</tr>--}}
+                                <tr>
+                                    <td>Company Proof:</td>
+                                    <td>  <a href="{{ url( $use->company_proof) }}" data-title="RC Book Copy" data-lightbox="truck">CompanyProof</td>
+                                </tr>
                                 <tr>
                                     <td>Address:</td>
                                     <td>{{ $use->company_address }}</td>

@@ -6,21 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="beaff400-6b91-4474-b07d-447c85a9468b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Owner/TruckOwnerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Owner/TruckOwnerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/TruckOwner/UserDetails.php" afterPath="$PROJECT_DIR$/app/Models/TruckOwner/UserDetails.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/truckowner-navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/truckowner-navbar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/transporter/requirement/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/transporter/requirement/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/transporter/requirement/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/transporter/requirement/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/truck-owner/loads/list.blade.php" afterPath="$PROJECT_DIR$/resources/views/truck-owner/loads/list.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/truck-owner/loads/live.blade.php" afterPath="$PROJECT_DIR$/resources/views/truck-owner/loads/live.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/truck-owner/loads/search.blade.php" afterPath="$PROJECT_DIR$/resources/views/truck-owner/loads/search.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/truck-owner/transactions/current.blade.php" afterPath="$PROJECT_DIR$/resources/views/truck-owner/transactions/current.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/truck-owner/transactions/transaction-history.blade.php" afterPath="$PROJECT_DIR$/resources/views/truck-owner/transactions/transaction-history.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/truck-owner/trucks/track-trucks.blade.php" afterPath="$PROJECT_DIR$/resources/views/truck-owner/trucks/track-trucks.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/truck-owner/trucks/trucks.blade.php" afterPath="$PROJECT_DIR$/resources/views/truck-owner/trucks/trucks.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/truck-owner/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/truck-owner/profile.blade.php" />
     </list>
     <ignored path="Panel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,16 +57,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="truckowner-navbar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/truckowner-navbar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
-              <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -91,14 +67,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TruckOwnerController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TruckOwnerController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Owner/TruckOwnerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66547406">
+            <state vertical-scroll-proportion="-14.307693">
               <caret line="80" column="68" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
               <folding>
                 <element signature="e#51#79#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/truck/view.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923">
+              <caret line="53" column="118" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="118" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/truck-owner/profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.5474061">
+              <caret line="83" column="139" selection-start-line="83" selection-start-column="139" selection-end-line="83" selection-end-column="139" />
               <folding />
             </state>
           </provider>
@@ -210,8 +196,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TruckOwnerController.php" />
         <option value="$PROJECT_DIR$/app/Models/TruckOwner/UserDetails.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/truck-owner/profile.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Owner/TruckOwnerController.php" />
+        <option value="$PROJECT_DIR$/resources/views/truck-owner/profile.blade.php" />
       </list>
     </option>
   </component>
@@ -392,6 +378,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="truck-owner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Panel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Panel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="truck" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -703,13 +715,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4362487">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Helpers/SessionFlasher.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1054,14 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.653846">
-          <caret line="59" column="25" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/TruckOwner/UserDetails.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.23077">
@@ -1078,21 +1075,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/truck-owner/profile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Owner/TruckOwnerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66547406">
+        <state vertical-scroll-proportion="-14.307693">
           <caret line="80" column="68" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
           <folding>
             <element signature="e#51#79#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.653846">
+          <caret line="59" column="25" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/truck/view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="53" column="118" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/truck-owner/profile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5474061">
+          <caret line="83" column="139" selection-start-line="83" selection-start-column="139" selection-end-line="83" selection-end-column="139" />
+          <folding />
         </state>
       </provider>
     </entry>
