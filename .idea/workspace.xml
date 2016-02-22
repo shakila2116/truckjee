@@ -34,6 +34,7 @@
     <favorites_list name="Panel" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< truck-owner
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="TruckOwnerController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TruckOwnerController.php">
@@ -75,6 +76,15 @@
               <folding>
                 <element signature="e#51#79#0#PHP" expanded="true" />
               </folding>
+=======
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.13372956">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+              <folding />
+>>>>>>> local
             </state>
           </provider>
         </entry>
@@ -271,6 +281,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< truck-owner
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Panel" />
@@ -511,6 +522,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Project Files">
+>>>>>>> local
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Panel" />
@@ -653,7 +671,11 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< truck-owner
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21482602" sideWeight="0.49565217" order="0" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3003984" sideWeight="0.49565217" order="0" side_tool="false" content_ui="tabs" />
+>>>>>>> local
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789317" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789317" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944983" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -881,14 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.037037">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/transporter/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537">
@@ -1103,8 +1117,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/truck-owner/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< truck-owner
         <state vertical-scroll-proportion="0.5474061">
           <caret line="83" column="139" selection-start-line="83" selection-start-column="139" selection-end-line="83" selection-end-column="139" />
+          <folding />
+=======
+        <state vertical-scroll-proportion="0.72136223">
+          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+          <folding>
+            <marker date="1455798103423" expanded="true" signature="44:4545" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="81:307" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="94:128" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="160:292" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="337:4543" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="363:4528" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="398:2262" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="444:2243" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="501:596" placeholder="..." />
+            <marker date="1455798103423" expanded="false" signature="639:2220" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="700:2193" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="733:895" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="928:1070" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="1103:1265" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="1270:1442" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="1475:1656" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="1689:1835" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="1868:2160" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="1953:2126" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="2298:4513" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="2344:4494" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="2401:2499" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="2542:4471" placeholder="..." />
+            <marker date="1455798103423" expanded="false" signature="2603:4444" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="2636:2796" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="2829:2993" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="3026:3182" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="3215:3371" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="3404:3641" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="3674:3828" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="3861:4021" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="4054:4215" placeholder="..." />
+            <marker date="1455798103423" expanded="true" signature="4248:4411" placeholder="..." />
+          </folding>
+>>>>>>> local
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13372956">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
           <folding />
         </state>
       </provider>
