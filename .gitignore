@@ -1,0 +1,11 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+/.idea
+/public/users
+<<<<<<< HEAD
+/public/trucks
+=======
+>>>>>>> front-end

@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: TruckJee
+        psr4_prefix: TruckJee
+        src_path: app
