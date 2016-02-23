@@ -2,13 +2,10 @@
 
 namespace TruckJee\Http\Controllers\Owner;
 
-use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\DB;
 use TruckJee\Http\Requests;
 use TruckJee\Http\Controllers\Controller;
 use TruckJee\Models\TruckOwner\Truck;
-use TruckJee\Models\TruckOwner\UserDetails;
 use TruckJee\User;
 
 class TruckOwnerController extends Controller
@@ -76,9 +73,11 @@ class TruckOwnerController extends Controller
     {
         return view('truck-owner.transactions.transaction-history');
     }
-    public function profile($id){
-        $owner = User :: findOrFail($id);
-        $user = UserDetails::where('user_id','=',$owner->id)->get();
+
+    public function profile()
+    {
+        $owner = User :: findOrFail($this->user->id);
+        $user = $owner->getDetails()->first();
         return view('truck-owner.profile')->with(['owner'=>$owner,'user'=>$user]);
     }
 }
