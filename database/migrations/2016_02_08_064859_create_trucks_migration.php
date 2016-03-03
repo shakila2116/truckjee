@@ -14,14 +14,14 @@ class CreateTrucksMigration extends Migration
     {
         Schema::create('truck_models',function(Blueprint $table){
             $table->increments('id');
-            $table->string('search_term');
+            $table->string('model_id');
             $table->timestamps();
 
         });
 
         Schema::create('truck_model_details',function(Blueprint $table){
             $table->increments('id');
-            $table->integer('search_term_id')->unsigned();
+            $table->integer('model_id')->unsigned();
             $table->string('model_name');
             $table->string('manufacturer');
             $table->string('dimension');
@@ -40,12 +40,12 @@ class CreateTrucksMigration extends Migration
             $table->string('truck_number')->unique();
             $table->integer('owner_id')->unsigned();
             $table->integer('model_id')->unsigned();
-            $table->integer('search_term_id')->unsigned();
+            $table->integer('description_id')->unsigned();
             $table->string('status'); //0-empty 1-transaction
             $table->string('short_form');
             $table->string('imei',16);
-            $table->string('current_location_city');
-            $table->string('current_location_state');
+            $table->string('current_locality');
+            $table->string('current_district');
             $table->string('rc');
             $table->string('insurance');
             $table->string('pollution');
@@ -57,13 +57,13 @@ class CreateTrucksMigration extends Migration
 
 
         Schema::table('trucks',function($table){
-            $table->foreign('model_id')->references('id')->on('truck_model_details');
-            $table->foreign('search_term_id')->references('id')->on('truck_models');
+            $table->foreign('model_id')->references('id')->on('truck_models');
+            $table->foreign('description_id')->references('id')->on('truck_model_details');
             $table->foreign('owner_id')->references('id')->on('users');
         });
 
         Schema::table('truck_model_details', function($table){
-            $table->foreign('search_term_id')->references('id')->on('truck_models');
+            $table->foreign('model_id')->references('id')->on('truck_models');
         });
     }
 

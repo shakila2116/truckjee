@@ -16,6 +16,11 @@ use Yajra\Datatables\Datatables;
 
 class APIController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+    
     public function getOwners()
     {
         $users = User::Owners()->get();
@@ -54,7 +59,7 @@ class APIController extends Controller
             ->addColumn('actions', function ($data) {
                 return  "<a class='btn btn-xs btn-success' href='/admin/truck/$data->id/view/'>View</a>";
             })
-            ->editColumn('search_term_id','{{ getSearchTerm($id) }}')
+            ->editColumn('description_id','{{ getSearchTerm($id) }}')
             ->editColumn('model_id','{{ getModelInfo($id) }}')
             ->removeColumn('id')
             ->make(true);
@@ -63,9 +68,8 @@ class APIController extends Controller
     public function getTruckModels()
     {
         $query = Input::get('q');
-
         return Response::json(array(
-            'data'=>TruckModel::where('search_term','like',"%". $query ."%")
+            'data'=>TruckModel::where('model_id','like',"%". $query ."%")
                 ->get()
         ));
     }
@@ -74,7 +78,7 @@ class APIController extends Controller
     {
         $query = Input::get('q');
         return Response::json(array(
-            'data'=>TruckModelDetails::where('search_term_id','=',$query)
+            'data'=>TruckModelDetails::where('model_id','=',$query)
                 ->get()
         ));
     }

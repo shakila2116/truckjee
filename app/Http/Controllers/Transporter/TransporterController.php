@@ -7,10 +7,17 @@ use Illuminate\Http\Request;
 use TruckJee\Http\Requests;
 use TruckJee\Http\Controllers\Controller;
 use TruckJee\User;
+use UxWeb\SweetAlert\SweetAlert;
 
 
 class TransporterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('transporter');
+        parent::__construct();
+    }
     public function index()
     {
         return view('transporter.dashboard');
@@ -20,13 +27,12 @@ class TransporterController extends Controller
     {
         return view('transporter.requirement.create');
     }
-    
-    public function createRequirement(Request $request)
+
+    public function profile()
     {
-        dd($request->input());
-    }
-    public function viewRequirement(){
-        return view('transporter.requirement.view');
+        $transporter = User :: findOrFail($this->user->id);
+        $details = $transporter->getDetails()->first();
+        return view('transporter.profile')->with(['transporter'=>$transporter,'details'=>$details]);
     }
 
 }

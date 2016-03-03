@@ -43,12 +43,12 @@
 
                                 <div class="form-group">
                                     <label for="search_term_id">Truck Model(Search Term)</label>
-                                    <select name="search_term_id" id="search_term_id" placeholder="Enter Model Name"></select>
+                                    <select name="model_id" id="search_term_id" placeholder="Enter Model Name"></select>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="model_id">Truck Model, Make and other details</label>
-                                    <select name="model_id" id="model_id" placeholder="Enter Model Name"></select>
+                                    <select name="description_id" id="model_id" placeholder="Enter Model Name"></select>
                                 </div>
 
                                 <div class="form-group">
@@ -107,13 +107,6 @@
                             </ul>
                         </div>
                     @endif
-                        @if(\Illuminate\Support\Facades\Session::has('message'))
-                            <div class="alert alert-success alert-dismissible" style="margin-top:2em;">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                <h4><i class="icon fa fa-ban"></i> Success!</h4>
-                                <h3>{{ \Illuminate\Support\Facades\Session::get('message') }}</h3>
-                            </div>
-                        @endif
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title">Truck Owner Information</h3>
@@ -176,15 +169,16 @@
             $('#truck_number').mask('AA-AA-AA-AAAA');
             $('#search_term_id').selectize({
                 valueField: 'id',
-                labelField: 'search_term',
-                searchField: ['search_term'],
+                labelField: 'model_id',
+                searchField: ['model_id'],
                 maxOptions: 10,
                 options: [],
                 create: false,
                 render: {
                     option: function(item, escape) {
+                        console.log(item);
                         return '<div>' +
-                                escape(item.search_term)+
+                                escape(item.model_id)+
                                 '</div>';
                     }
                 },
@@ -201,6 +195,7 @@
                             callback();
                         },
                         success: function(res) {
+                            console.log(res.data);
                             callback(res.data);
                         }
                     });

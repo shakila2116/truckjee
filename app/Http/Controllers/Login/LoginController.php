@@ -50,7 +50,7 @@ class LoginController extends Controller
           'password'=>  $password
       ]))
       {
-          Log::warning("User logged login ".$request->input('email'));
+          Log::info("User logged login ".$request->input('email'));
 
           return response()->redirectTo($this->getUrl($user->role));
       }

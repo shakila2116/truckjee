@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ url('css/AdminLTE.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/blue.css') }}">
     <link rel="stylesheet" href="{{ url('css/skin-blue.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/sweetalert.css') }}">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

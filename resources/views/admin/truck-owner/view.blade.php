@@ -55,7 +55,7 @@
                             <thead>
                             <tr>
                                 <td>Number</td>
-                                <td>Search Term</td>
+                                <td>Model ID</td>
                                 <td>IMEI</td>
                                 <td>Model Name</td>
                                 <td></td>
@@ -64,9 +64,9 @@
                             @foreach($trucks as $truck)
                                 <tr>
                                     <td>{{ $truck->truck_number}}</td>
-                                    <td>{{ getSearchTerm($truck->search_term_id) }}</td>
+                                    <td>{{ getModelName($truck->model_id) }}</td>
                                     <td>{{ $truck->imei }}</td>
-                                    <td>{{ getModelInfo($truck->model_id) }}</td>
+                                    <td>{{ getModelInfo($truck->description_id) }}</td>
                                     <td><a href="{{ url('/admin/truck/'.$truck->id.'/view') }}"
                                            class="btn btn-xs btn-danger">View</a></td>
                                 </tr>

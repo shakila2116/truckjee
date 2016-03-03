@@ -56,7 +56,7 @@ class TruckController extends Controller
             }
         }
         $truck->save();
-        Session::flash('message','Success! Truck created with ID '.getTruckId($truck->id));
+        alert()->success('Success! Truck created with ID','Success')->persistent("Okay");
         return redirect()->back();
     }
 
@@ -85,7 +85,7 @@ class TruckController extends Controller
             'owner_id'      =>  'required',
             'imei'          =>  'required|unique:trucks,imei',
             'model_id'      =>  'required',
-            'search_term_id'      =>  'required'
+            'description_id'      =>  'required'
         ]);
     }
 
@@ -101,7 +101,7 @@ class TruckController extends Controller
             'truck_number'  =>  $data['truck_number'],
             'short_form'    =>  $data['short_form'],
             'model_id'      =>  $data['model_id'],
-            'search_term_id'      =>  $data['search_term_id'],
+            'description_id'      =>  $data['description_id'],
             'owner_id'      =>  $data['owner_id'],
             'imei'          =>  $data['imei']
         ]);

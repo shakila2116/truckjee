@@ -14,7 +14,7 @@ class Truck extends Model
         'truck_number',
         'short_form',
         'model_id',
-        'search_term_id',
+        'description_id',
         'owner_id',
         'imei',
         'rc',
@@ -24,13 +24,26 @@ class Truck extends Model
         'np'
     ];
 
+
+
     public function scopegetTrucksOfUser($query, $id)
     {
         return $query->where('owner_id','=',$id)->get();
     }
 
+    public function scopeGetEmptyTrucks($query,$truck_types, $source_district, $source_locality)
+    {
+        return $query->whereIn('model_id',$truck_types)
+                    ->where('status','=','0')
+                    ->where(function($q) use($source_locality, $source_district){
+                        $q->where('current_locality','=',$source_locality)
+                            ->orWhere('current_district','=',$source_district);
+                    })
+                    ->get();
+    }
+
     public function owner()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('TruckJee\User')->first();
     }
 }

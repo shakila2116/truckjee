@@ -18,6 +18,13 @@
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <li class="messages-menu">
+                    @if(auth()->user()->role == 1)
+                        <a href="{{ url('truck-owner/profile') }}">{{ auth()->user()->name }}</a>
+                    @elseif(auth()->user()->role == 2)
+                        <a href="{{ url('transporter/profile') }}">{{ auth()->user()->name }}</a>
+                    @endif
+                </li>
+                <li class="messages-menu">
                     <a href="{{ url('/logout') }}">Logout</a>
                 </li>
             </ul>
@@ -29,7 +36,7 @@
         @include('layouts.admin-navbar')
     @elseif(auth()->user()->role == 1)
         @include('layouts.truckowner-navbar')
-    @else
+    @elseif(auth()->user()->role == 2)
         @include('layouts.transporter-navbar')
     @endif
 </aside>

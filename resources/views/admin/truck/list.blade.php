@@ -29,7 +29,7 @@
                             <td>Owner Name</td>
                             <td>Number</td>
                             <td>Model Name</td>
-                            <td>Search Term</td>
+                            <td>Model Description</td>
                             <td>GPS IMEI</td>
                             <td>Action</td>
                         </tr>
@@ -58,8 +58,8 @@
                     { data: 'truck_id', name: 'truck_id' },
                     { data: 'name', name: 'name' },
                     { data: 'truck_number', name: 'truck_number' },
+                    { data: 'description_id', name: 'description_id' },
                     { data: 'model_id', name: 'model_id' },
-                    { data: 'search_term_id', name: 'search_term_id' },
                     { data: 'imei', name: 'imei' },
                     { data: 'actions', name:'action', searchable: false}
                 ]

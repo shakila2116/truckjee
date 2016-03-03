@@ -56,7 +56,8 @@ function getStatus($status)
     return "In Transaction";
 }
 
-function getSearchTerm($id)
+function getModelName($id)
 {
-    return TruckModel::findOrFail($id)->search_term;
+    return TruckModel::findOrFail($id)->model_id;
 }
+

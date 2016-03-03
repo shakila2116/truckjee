@@ -45,8 +45,12 @@
                             <td>{{ $truck->imei }}</td>
                         </tr>
                         <tr>
+                            <td>Model</td>
+                            <td>{{ getModelName($truck->model_id) }}</td>
+                        </tr>
+                        <tr>
                             <td>Model Info</td>
-                            <td>{{ getModelInfo($truck->model_id) }}</td>
+                            <td>{{ getModelInfo($truck->description_id) }}</td>
                         </tr>
                         <tr>
                             <td>Rc Book</td>

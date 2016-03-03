@@ -11,12 +11,14 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/',function(){
     if(auth()->check())
     {
-       if(\Illuminate\Support\Facades\Auth::user()->role == 1)
+       if(Auth::user()->role == 1)
            return redirect('/truck-owner');
-       elseif(\Illuminate\Support\Facades\Auth::user()->role == 2)
+       elseif(Auth::user()->role == 2)
            return redirect('/transporter');
         return redirect('/admin');
     }
@@ -104,12 +106,14 @@ Route::group([
     Route::get('/trucks','Owner\TruckOwnerController@showTrucks');
     Route::get('/trucks/{id}/view','Owner\TruckOwnerController@viewTruck');
     Route::get('/track-trucks','Owner\TruckOwnerController@trackTrucks');
-    Route::get('/live-bids','Owner\TruckOwnerController@viewLiveBids');
     Route::get('/search-loads','Owner\TruckOwnerController@searchLoads');
     Route::get('/view-participation','Owner\TruckOwnerController@viewParticipation');
     Route::get('/current-transactions','Owner\TruckOwnerController@currentTransactions');
     Route::get('/transaction-history','Owner\TruckOwnerController@transactionHistory');
     Route::get('/profile/','Owner\TruckOwnerController@profile');
+
+    //Bids controller
+    Route::get('/live-bids','Owner\AuctionController@index');
 });
 
 
@@ -120,10 +124,14 @@ Route::group([
 ],function() {
 
     Route::get('/', 'Transporter\TransporterController@index');
+    Route::get('/profile','Transporter\TransporterController@profile');
 
-    Route::get('/requirement/create','Transporter\TransporterController@create');
-    Route::post('/requirement/create','Transporter\TransporterController@createRequirement');
-    Route::get('/requirement/list','Transporter\TransporterController@viewRequirement');
+    //Requirement Controller
+    Route::get('/requirement/create','Transporter\RequirementController@index');
+    Route::post('/requirement/create','Transporter\RequirementController@create');
+    Route::get('/requirement/{id}/view','Transporter\RequirementController@view');
+    Route::get('/requirement/list','Transporter\RequirementController@listRequirement');
+
 
 });
 

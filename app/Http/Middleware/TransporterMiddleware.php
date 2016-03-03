@@ -16,7 +16,7 @@ class TransporterMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && auth()->user()->role != 2)
+        if(Auth::check() && Auth::user()->role != 2)
         {
             return response("Unauthorized to perform this transporter action");
         }

@@ -31,7 +31,8 @@
                             <tr>
                                 <td>DocumentNumber: </td>
                                 <td>{{ $user->document_number }}</td>
-                            </tr> <tr>
+                            </tr>
+                            <tr>
                                 <td>DateofBirth:</td>
                                 <td>{{ date('d-m-Y', strtotime($user->dob)) }}</td>
                             </tr>

@@ -16,6 +16,10 @@ class EventServiceProvider extends ServiceProvider
         'TruckJee\Events\SomeEvent' => [
             'TruckJee\Listeners\EventListener',
         ],
+        
+        'TruckJee\Events\RequirementCreated' => [
+            'TruckJee\Listeners\RequirementCreatedListener',
+        ],
     ];
 
     /**

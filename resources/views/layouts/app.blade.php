@@ -34,6 +34,9 @@
 <!-- AdminLTE App -->
 <script src="{{ url('js/app.min.js') }}"></script>
 
+<script src="{{ url('js/sweetalert.min.js') }}"></script>
+@include('sweet::alert')
+
 @yield('scripts')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

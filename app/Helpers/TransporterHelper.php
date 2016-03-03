@@ -1,5 +1,7 @@
 <?php
 
+use TruckJee\Models\TruckOwner\TruckModel;
+
 function getTransporterId($id)
 {
     return "TR".(100+$id);
@@ -60,7 +62,7 @@ function getAdvance()
         '90% and Above',
         '80% - 90%',
         '60% - 70%',
-        'les than 70%'
+        'less than 70%'
     ];
 }
 
@@ -73,4 +75,9 @@ function getBalance()
         '30 days',
         'more than 30 days'
     ];
+}
+
+function getTruckTypes()
+{
+    return TruckModel::all(['id','model_id']);
 }

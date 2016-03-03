@@ -66,9 +66,9 @@ class User extends Model implements AuthenticatableContract,
         return $this->hasMany('TruckJee\Models\TruckOwner\Truck','owner_id')->get();
     }
 
-    public function users()
+    public function openRequirements()
     {
-        return $this->hasMany('TruckJee\Models\TruckOwner\Userdetails','user_id')->get();
+        return $this->hasMany('TruckJee\Models\Transporter\Requirement','user_id')->where('status','=','0')->get();
     }
 
 }
